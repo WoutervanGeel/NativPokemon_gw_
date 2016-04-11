@@ -13,6 +13,10 @@
 		467017741CB90837007F9A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467017721CB90837007F9A0C /* Main.storyboard */; };
 		467017761CB90837007F9A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467017751CB90837007F9A0C /* Assets.xcassets */; };
 		467017791CB90837007F9A0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467017771CB90837007F9A0C /* LaunchScreen.storyboard */; };
+		467017821CB91AC2007F9A0C /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467017811CB91AC2007F9A0C /* APIHandler.swift */; };
+		467017851CB922DF007F9A0C /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467017841CB922DF007F9A0C /* Venue.swift */; };
+		467017871CB9258F007F9A0C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467017861CB9258F007F9A0C /* Address.swift */; };
+		467017891CB92667007F9A0C /* Geolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467017881CB92667007F9A0C /* Geolocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		467017751CB90837007F9A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		467017781CB90837007F9A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4670177A1CB90837007F9A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		467017811CB91AC2007F9A0C /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		467017841CB922DF007F9A0C /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		467017861CB9258F007F9A0C /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		467017881CB92667007F9A0C /* Geolocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geolocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +67,32 @@
 				4670176C1CB90837007F9A0C /* AppDelegate.swift */,
 				4670176E1CB90837007F9A0C /* MasterViewController.swift */,
 				467017701CB90837007F9A0C /* DetailViewController.swift */,
+				467017831CB9229A007F9A0C /* Models */,
+				467017801CB91A5F007F9A0C /* APIHandler */,
 				467017721CB90837007F9A0C /* Main.storyboard */,
 				467017751CB90837007F9A0C /* Assets.xcassets */,
 				467017771CB90837007F9A0C /* LaunchScreen.storyboard */,
 				4670177A1CB90837007F9A0C /* Info.plist */,
 			);
 			path = NativPokemon_gw;
+			sourceTree = "<group>";
+		};
+		467017801CB91A5F007F9A0C /* APIHandler */ = {
+			isa = PBXGroup;
+			children = (
+				467017811CB91AC2007F9A0C /* APIHandler.swift */,
+			);
+			name = APIHandler;
+			sourceTree = "<group>";
+		};
+		467017831CB9229A007F9A0C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				467017841CB922DF007F9A0C /* Venue.swift */,
+				467017861CB9258F007F9A0C /* Address.swift */,
+				467017881CB92667007F9A0C /* Geolocation.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				467017871CB9258F007F9A0C /* Address.swift in Sources */,
 				467017711CB90837007F9A0C /* DetailViewController.swift in Sources */,
+				467017891CB92667007F9A0C /* Geolocation.swift in Sources */,
+				467017851CB922DF007F9A0C /* Venue.swift in Sources */,
 				4670176F1CB90837007F9A0C /* MasterViewController.swift in Sources */,
 				4670176D1CB90837007F9A0C /* AppDelegate.swift in Sources */,
+				467017821CB91AC2007F9A0C /* APIHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +320,7 @@
 				4670177F1CB90837007F9A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
