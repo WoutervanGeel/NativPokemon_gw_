@@ -117,6 +117,7 @@ public class VenueListActivity extends AppCompatActivity {
                         Bundle arguments = new Bundle();
                         arguments.putString("title", holder.mItem.name);
                         arguments.putString("content", holder.mItem.getInfo());
+                        arguments.putString("telephone", holder.mItem.telephone.toString());
                         VenueDetailFragment fragment = new VenueDetailFragment();
                         fragment.setArguments(arguments);
                         getSupportFragmentManager().beginTransaction()
@@ -127,7 +128,7 @@ public class VenueListActivity extends AppCompatActivity {
                         Intent intent = new Intent(context, VenueDetailActivity.class);
                         intent.putExtra("title", holder.mItem.name);
                         intent.putExtra("content", holder.mItem.getInfo());
-
+                        intent.putExtra("telephone", holder.mItem.telephone);
                         context.startActivity(intent);
                     }
                 }
