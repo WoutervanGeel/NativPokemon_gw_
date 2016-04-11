@@ -12,8 +12,6 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [AnyObject]()
-    var apiHandler = APIHandler()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -85,12 +83,7 @@ class MasterViewController: UITableViewController {
                                 tagline = venue["tagline"] as! String
                             }
                             
-                            telephone = "0611805480"
-                            
-                            let address = Address(_street: "testStreet", _zipcode: "testZipcode", _city: "testCity", _region: "testRegion", _country: "testCountry")
-                            let geolocation = Geolocation(_latitude: 1.0101010101, _longitude: 2.0202020202)
-                            
-                            var tempVenue = Venue(_id: id, _name: name, _category: category, _telephone: telephone, _website_url: website_url, _tagline: tagline, _address: address, _geolocation: geolocation)
+                            var tempVenue = Venue(_id: id, _name: name, _category: category, _telephone: telephone, _website_url: website_url, _tagline: tagline)
                             
                             
                             self.insertNewVenue(tempVenue)
