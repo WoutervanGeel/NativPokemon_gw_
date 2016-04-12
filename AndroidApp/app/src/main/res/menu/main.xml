@@ -4,8 +4,12 @@
         <!-- "Mark Favorite", should appear as action button if possible -->
 
         <!-- Settings, should always be in the overflow -->
-        <item android:id="@+id/action_settings"
-            android:title="Settings"
+        <item android:id="@+id/action_set_venue"
+            android:title="Set to venue"
             />
+
+    <item android:id="@+id/action_set_restaurant"
+        android:title="Set to restaurant"
+        />
 
 </menu>

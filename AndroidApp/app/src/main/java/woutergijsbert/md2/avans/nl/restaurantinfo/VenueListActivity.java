@@ -2,6 +2,7 @@ package woutergijsbert.md2.avans.nl.restaurantinfo;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -29,15 +31,19 @@ public class VenueListActivity extends AppCompatActivity {
     private boolean mTwoPane;
     private SimpleItemRecyclerViewAdapter adapter;
     private View recyclerView;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venue_list);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitle(getTitle());
+
+        SharedPreferences sharedPref = VenueListActivity.this.getPreferences(Context.MODE_PRIVATE);
+        String title = sharedPref.getString(getResources().getString(R.string.app_name), "Test");
+        toolbar.setTitle(title);
 
         recyclerView = findViewById(R.id.venue_list);
         adapter = new SimpleItemRecyclerViewAdapter();
@@ -75,6 +81,28 @@ public class VenueListActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading...");
         progressDialog.show();*/
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        SharedPreferences sharedPref = VenueListActivity.this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_set_restaurant:
+                editor.putString(getString(R.string.app_name), "Restaurant");
+                editor.commit();
+                //toolbar.setTitle(R.string.app_name);
+                return true;
+            case R.id.action_set_venue:
+                editor.putString(getString(R.string.app_name), "Venues");
+                editor.commit();
+                //toolbar.setTitle(R.string.app_name);
+                return true;
+            default:
+                return true;
+        }
     }
 
     @Override

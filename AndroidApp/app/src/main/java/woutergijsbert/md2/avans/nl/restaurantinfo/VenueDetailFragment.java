@@ -41,7 +41,6 @@ public class VenueDetailFragment extends Fragment {
             appBarLayout.setTitle(getArguments().getString("title"));
 
             Button callButton = new Button(this.getContext());
-            callButton.setText("Call now: " + getArguments().getString("telephone"));
             callButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
