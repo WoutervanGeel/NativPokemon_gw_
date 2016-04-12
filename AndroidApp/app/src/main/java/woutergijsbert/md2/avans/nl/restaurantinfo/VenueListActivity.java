@@ -39,12 +39,13 @@ public class VenueListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_venue_list);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        TextView tv = (TextView)findViewById(R.id.textviewName);
         setSupportActionBar(toolbar);
 
         SharedPreferences sharedPref = VenueListActivity.this.getPreferences(Context.MODE_PRIVATE);
-        String title = sharedPref.getString(getResources().getString(R.string.app_name), "Test");
-        toolbar.setTitle(title);
-
+        String key = getResources().getString(R.string.app_name);
+        String title = sharedPref.getString(key, "test");
+        tv.setText(title);
         recyclerView = findViewById(R.id.venue_list);
         adapter = new SimpleItemRecyclerViewAdapter();
 

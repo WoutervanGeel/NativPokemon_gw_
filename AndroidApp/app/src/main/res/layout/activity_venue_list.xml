@@ -28,6 +28,13 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <include layout="@layout/venue_list" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="restaurants"
+            android:id="@+id/textviewName"
+            android:layout_gravity="center_horizontal|top" />
     </FrameLayout>
 
 
